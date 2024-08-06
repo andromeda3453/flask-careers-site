@@ -1,0 +1,26 @@
+/* body {
+  font-family: Roboto;
+}
+
+h1,
+h2 {
+  font-weight: normal;
+  text-align: center;
+  margin: 20px;
+}
+
+p {
+  text-align: center;
+}
+
+
+#container {
+  width: 60%;
+  margin: 0 auto;
+} */
+
+#banner {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+}
