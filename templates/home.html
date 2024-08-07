@@ -26,18 +26,9 @@
         </p>
         <h2 class="text-center mt-3 mb-4">Open Positions</h2>
         {% for job in jobs %}
-        <div
-            class="shadow bg-body-tertiary rounded d-flex px-5 py-3 justify-content-between w-75 text-center align-items-center mx-auto mb-4">
-            <div class="d-flex flex-column">
-                <h3>Title</h3>
-                <h5>Location</h5>
-                <h5>salary</h5>
-            </div>
-            <div>
-                <button class="btn btn-primary btn-lg">Apply</button>
-            </div>
-        </div>
-        
+        {% include 'jobs.html' %}
+        {% endfor %}
+
     </div>
     <div class="text-center">
         <button class="btn btn-warning btn-lg">Contact Us</button>
