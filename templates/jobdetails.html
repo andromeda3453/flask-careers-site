@@ -1,38 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends '_layout.html'%}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> {{ job.title }} - Apply</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="static/jobdetails.css">
-</head>
+{%block title %} Application - {{job.title}} {% endblock%}
 
-<body>
-    <div class="container my-5">
-        <!-- <div class="card"> -->
-        <!-- <div class="card-body"> -->
-        <h1 class="card-title">{{job.title}}</h1>
-        <h5 class="card-subtitle mb-2 text-muted">{{job.company}}</h5>
-        <p class="card-text"><strong>Location: </strong>{{job.location}}</p>
-        <p class="card-text"><strong>About this role:</strong></p>
-        <p class="card-text">
-            {{ job.about }}
-        </p>
-        <p class="card-text"><strong>Qualifications:</strong></p>
-        <ul>
-            <li>Bachelor's degree in Computer Science or related field</li>
-            <li>2+ years of experience with modern web technologies</li>
-            <li>Strong problem-solving skills</li>
-        </ul>
-        <a href="#" class="btn btn-primary">Apply Now</a>
-        <!-- </div> -->
-        <!-- </div> -->
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+{% block head %}
+<link rel="stylesheet" href="static/jobdetails.css">{% endblock head %}
 
-</html>
+{% block content %}
+
+<div class="container my-5">
+    <h1 class="card-title">{{job.title}}</h1>
+    <h5 class="card-subtitle mb-2 text-muted">{{job.company}}</h5>
+    <p class="card-text"><strong>Location: </strong>{{job.location}}</p>
+    <p class="card-text"><strong>About this role:</strong></p>
+    <p class="card-text">
+        {{ job.about }}
+    </p>
+    <p class="card-text"><strong>Qualifications:</strong></p>
+    <ul>
+        <li>Bachelor's degree in Computer Science or related field</li>
+        <li>2+ years of experience with modern web technologies</li>
+        <li>Strong problem-solving skills</li>
+    </ul>
+    <a href="#" class="btn btn-primary">Apply Now</a>
+</div>
+
+{% endblock content %}
