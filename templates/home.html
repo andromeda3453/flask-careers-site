@@ -1,47 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends '_layout.html'%}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/app.css">
-    <title>Home</title>
-</head>
+{%block title %} Home {% endblock%}
 
-<body>
-    {% include 'nav.html' %}
-    <img id="banner" class="img-fluid mt-1" src="static/banner.jpg">
-    <div class="container">
-        <!-- <h1 class="text-center mt-2 mb-4">Apex Careers</h1> -->
-        <h2 class="text-center mt-3 mb-4">About Apex Careers</h2>
-        <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque quam sit repudiandae temporibus
-            nesciunt sint
-            dolore nostrum! Qui enim totam consequuntur adipisci non itaque ipsum, veniam, molestiae dolores, nesciunt
-            hic!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem incidunt odit obcaecati fugiat eos sequi
-            beatae
-            magni veritatis harum, numquam voluptatem, laudantium atque quae consequuntur neque delectus quo. Veniam,
-            id.
-        </p>
-        <h2 class="text-center mt-3 mb-4">Open Positions</h2>
-        {% for job in jobs %}
-        {% include 'jobs.html' %}
-        {% endfor %}
+{% block head %}
+<link rel="stylesheet" href="static/app.css">{% endblock head %}
 
-    </div>
-    <div class="text-center">
-        <button class="btn btn-warning btn-lg">Contact Us</button>
-    </div>
+{% block content %}
+<img id="banner" class="img-fluid mt-1" src="static/banner.jpg">
+<div class="container">
+    <!-- <h1 class="text-center mt-2 mb-4">Apex Careers</h1> -->
+    <h2 class="text-center mt-3 mb-4">About Apex Careers</h2>
+    <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque quam sit repudiandae temporibus
+        nesciunt sint
+        dolore nostrum! Qui enim totam consequuntur adipisci non itaque ipsum, veniam, molestiae dolores, nesciunt
+        hic!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem incidunt odit obcaecati fugiat eos sequi
+        beatae
+        magni veritatis harum, numquam voluptatem, laudantium atque quae consequuntur neque delectus quo. Veniam,
+        id.
+    </p>
+    <h2 class="text-center mt-3 mb-4">Open Positions</h2>
+    {% for job in jobs %}
+    {% include 'jobs.html' %}
+    {% endfor %}
 
-
-</body>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-
-</html>
+</div>
+<div class="text-center">
+    <button class="btn btn-warning btn-lg">Contact Us</button>
+</div>
+{% endblock content %}
