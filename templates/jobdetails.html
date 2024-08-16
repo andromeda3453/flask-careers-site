@@ -9,17 +9,21 @@
 
 <div class="container my-5">
     <h1 class="card-title">{{job.title}}</h1>
-    <h5 class="card-subtitle mb-2 text-muted">{{job.company}}</h5>
-    <p class="card-text"><strong>Location: </strong>{{job.location}}</p>
-    <p class="card-text"><strong>About this role:</strong></p>
+    <h5 class="card-subtitle mb-2 text-muted">{{job.company or "-"}}</h5>
+    <p class="card-text"><strong>Location: </strong>{{job.location or "-"}}</p>
+    <p class="card-text"><strong>Responsibilities in this role:</strong></p>
     <p class="card-text">
-        {{ job.about }}
-    </p>
-    <p class="card-text"><strong>Qualifications:</strong></p>
     <ul>
-        <li>Bachelor's degree in Computer Science or related field</li>
-        <li>2+ years of experience with modern web technologies</li>
-        <li>Strong problem-solving skills</li>
+        {% for line in job.responsibilities.split('\n') %}
+        <li>{{line}}</li>
+        {% endfor %}
+    </ul>
+    </p>
+    <p class="card-text"><strong>Requirements:</strong></p>
+    <ul>
+        {% for line in job.requirements.split('\n') %}
+        <li>{{line}}</li>
+        {% endfor %}
     </ul>
     <a href="#" class="btn btn-primary">Apply Now</a>
 </div>
