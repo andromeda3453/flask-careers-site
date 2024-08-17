@@ -1,4 +1,4 @@
-<div
+<!-- <div
     class="shadow bg-body-tertiary rounded d-flex px-5 py-3 justify-content-between w-75 text-center align-items-center mx-auto mb-4">
     <div class="d-flex w-25 flex-column">
         <p class="h3">{{job.title}}</p>
@@ -8,4 +8,13 @@
     <div>
         <a href="{{ url_for('job_detail', job_id=job['id']) }}" class="btn btn-primary btn-lg">Apply</a>
     </div>
+</div> -->
+
+<div class="job-card w-75 mx-auto">
+    <h2 class="job-title">{{job.title}}</h2>
+    <p class="job-details">
+        <span class="me-3"><i class="fa-solid fa-location-dot"></i> {{job.location}}</span>
+        <span class="job-salary">{{job.currency or ""}} {{job.salary or ""}}</span>
+    </p>
+    <a href="{{ url_for('job_detail', job_id=job['id']) }}" class="btn btn-primary btn-apply">Apply Now</a>
 </div>

@@ -3,11 +3,11 @@
 {%block title %} Application - {{job.title}} {% endblock%}
 
 {% block head %}
-<link rel="stylesheet" href="static/jobdetails.css">{% endblock head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='jobdetails.css') }}">{% endblock head %}
 
 {% block content %}
 
-<div class="container my-5">
+<!-- <div class="container my-5">
     <h1 class="card-title">{{job.title}}</h1>
     <h5 class="card-subtitle mb-2 text-muted">{{job.company or "-"}}</h5>
     <p class="card-text"><strong>Location: </strong>{{job.location or "-"}}</p>
@@ -26,6 +26,39 @@
         {% endfor %}
     </ul>
     <a href="#" class="btn btn-primary">Apply Now</a>
+</div> -->
+
+<div class="container">
+    <div class="job-card">
+        <div class="company-logo">P</div>
+        <h1 class="job-title">{{job.title}}</h1>
+        <p class="company-name">{{job.company}}</p>
+        <p class="job-details"><i class="fa-solid fa-location-dot"></i> {{job.location}}</p>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <button class="btn btn-primary btn-apply">Apply Now</button>
+            <!-- <button class="btn btn-bookmark"><i class="bi bi-bookmark"></i></button> -->
+        </div>
+
+        <!-- <h2 class="section-title">About this role</h2>
+        <p>As an UI/UX Designer on Pixelz Studio, you'll focus on design user-friendly on several platform (web, mobile,
+            dashboard, etc) to our users needs. Your innovative solution will enhance the user experience on several
+            platforms. Join us and let's making impact on user engagement at Pixelz Studio.</p> -->
+
+        <h2 class="section-title">Qualifications</h2>
+        <ul>
+            {% for line in job.requirements.split('\n') %}
+            <li>{{line}}</li>
+            {% endfor %}
+        </ul>
+
+        <h2 class="section-title">Responsibilities</h2>
+        <ul>
+            {% for line in job.responsibilities.split('\n') %}
+            <li>{{line}}</li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 
 {% endblock content %}

@@ -1,26 +1,46 @@
-/* body {
-  font-family: Roboto;
-}
-
-h1,
-h2 {
-  font-weight: normal;
-  text-align: center;
-  margin: 20px;
-}
-
-p {
-  text-align: center;
-}
-
-
-#container {
-  width: 60%;
-  margin: 0 auto;
-} */
-
 #banner {
   height: 350px;
   width: 100%;
   object-fit: cover;
+}
+
+body {
+  background-color: #f8f9fac7;
+}
+
+.job-list-container {
+  max-width: 800px;
+  margin: 30px auto;
+}
+.job-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease;
+}
+.job-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.job-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+.job-details {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+.job-salary {
+  font-weight: bold;
+  color: #28a745;
+}
+.btn-apply {
+  background-color: #0066ff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
 }

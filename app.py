@@ -7,7 +7,6 @@ app = Flask(__name__)
 @app.route("/job/<job_id>")
 def job_detail(job_id):
     job = get_jobs("*", job_id)[0]
-    print(job)
     return render_template("jobdetails.html", job=job)
 
 

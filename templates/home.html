@@ -3,10 +3,10 @@
 {%block title %} Home {% endblock%}
 
 {% block head %}
-<link rel="stylesheet" href="static/app.css">{% endblock head %}
+<link rel="stylesheet" href="{{url_for('static', filename='app.css')}}">{% endblock head %}
 
 {% block content %}
-<img id="banner" class="img-fluid mt-1" src="static/banner.jpg">
+<img id="banner" class="img-fluid" src="static/banner.jpg">
 <div class="container">
     <!-- <h1 class="text-center mt-2 mb-4">Apex Careers</h1> -->
     <h2 class="text-center mt-3 mb-4">About Apex Careers</h2>
@@ -19,7 +19,8 @@
         magni veritatis harum, numquam voluptatem, laudantium atque quae consequuntur neque delectus quo. Veniam,
         id.
     </p>
-    <h2 class="text-center mt-3 mb-4">Open Positions</h2>
+    <h2 class="text-center mt-5 mb-4">Open Positions</h2>
+
     {% for job in jobs %}
     {% include 'jobs.html' %}
     {% endfor %}
