@@ -1,5 +1,16 @@
-<nav class="navbar navbar-expand-lg bg-dark sticky-top p-3 shadow-sm" data-bs-theme="dark">
-    <div class="container-fluid">
-        <a class="navbar-brand mb-0 h1" href="{{url_for('home')}}"><span>Apex Careers</span></a>
+<nav class="navbar navbar-expand-lg navbar-sticky">
+    <div class="container">
+        <a class="navbar-brand" href="{{url_for('home')}}">JobConnect</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Jobs</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
     </div>
 </nav>

@@ -7,26 +7,6 @@
 
 {% block content %}
 
-<!-- <div class="container my-5">
-    <h1 class="card-title">{{job.title}}</h1>
-    <h5 class="card-subtitle mb-2 text-muted">{{job.company or "-"}}</h5>
-    <p class="card-text"><strong>Location: </strong>{{job.location or "-"}}</p>
-    <p class="card-text"><strong>Responsibilities in this role:</strong></p>
-    <p class="card-text">
-    <ul>
-        {% for line in job.responsibilities.split('\n') %}
-        <li>{{line}}</li>
-        {% endfor %}
-    </ul>
-    </p>
-    <p class="card-text"><strong>Requirements:</strong></p>
-    <ul>
-        {% for line in job.requirements.split('\n') %}
-        <li>{{line}}</li>
-        {% endfor %}
-    </ul>
-    <a href="#" class="btn btn-primary">Apply Now</a>
-</div> -->
 
 <div class="container">
     <div class="job-card">
@@ -34,11 +14,11 @@
         <h1 class="job-title">{{job.title}}</h1>
         <p class="company-name">{{job.company}}</p>
         <p class="job-details"><i class="fa-solid fa-location-dot"></i> {{job.location}}</p>
-
+        <!-- 
         <div class="d-flex justify-content-between align-items-center mb-4">
             <button class="btn btn-primary btn-apply">Apply Now</button>
-            <!-- <button class="btn btn-bookmark"><i class="bi bi-bookmark"></i></button> -->
-        </div>
+            <button class="btn btn-bookmark"><i class="bi bi-bookmark"></i></button>
+        </div> -->
 
         <!-- <h2 class="section-title">About this role</h2>
         <p>As an UI/UX Designer on Pixelz Studio, you'll focus on design user-friendly on several platform (web, mobile,
@@ -60,5 +40,8 @@
         </ul>
     </div>
 </div>
+
+{%include 'application_form.html'%}
+
 
 {% endblock content %}

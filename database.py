@@ -25,7 +25,7 @@ def get_jobs(columns: list[str], id: int = None):
 
     try:
         with engine.connect() as conn:
-            result = conn.execute(text(f"select {columns} from jobs {condition}"))
+            result = conn.execute(text(f"select {columns} from jobs {condition} limit 3"))
             jobs = result.all()
             jobs = [row._asdict() for row in jobs]
             return jobs

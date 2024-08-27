@@ -1,32 +1,67 @@
 {% extends '_layout.html'%}
 
+
 {%block title %} Home {% endblock%}
 
 {% block head %}
 <link rel="stylesheet" href="{{url_for('static', filename='app.css')}}">{% endblock head %}
 
+
 {% block content %}
-<img id="banner" class="img-fluid" src="static/banner.jpg">
-<div class="container">
-    <!-- <h1 class="text-center mt-2 mb-4">Apex Careers</h1> -->
-    <h2 class="text-center mt-3 mb-4">About Apex Careers</h2>
-    <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque quam sit repudiandae temporibus
-        nesciunt sint
-        dolore nostrum! Qui enim totam consequuntur adipisci non itaque ipsum, veniam, molestiae dolores, nesciunt
-        hic!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem incidunt odit obcaecati fugiat eos sequi
-        beatae
-        magni veritatis harum, numquam voluptatem, laudantium atque quae consequuntur neque delectus quo. Veniam,
-        id.
-    </p>
-    <h2 class="text-center mt-5 mb-4">Open Positions</h2>
 
-    {% for job in jobs %}
-    {% include 'jobs.html' %}
-    {% endfor %}
 
-</div>
-<div class="text-center">
-    <button class="btn btn-warning btn-lg">Contact Us</button>
-</div>
+<header class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4">Find Your Dream Job</h1>
+        <p class="lead">Connect with top companies and kickstart your career today</p>
+        <a href="#" class="btn btn-primary btn-lg mt-3">Search Jobs</a>
+    </div>
+</header>
+
+<section class="intro-section">
+    <div class="container">
+        <h2 class="text-center mb-4">Why Choose JobConnect?</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="intro-card">
+                    <h3>Wide Range of Opportunities</h3>
+                    <p>Access thousands of job listings from top companies across various industries.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="intro-card">
+                    <h3>Easy Application Process</h3>
+                    <p>Apply to multiple jobs with just a few clicks and track your applications effortlessly.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="intro-card">
+                    <h3>Career Resources</h3>
+                    <p>Get expert advice, resume tips, and interview preparation resources to boost your career.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="featured-jobs py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Featured Jobs</h2>
+        <div class="row">
+            {% for job in jobs %}
+            {% include 'jobs.html' %}
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-primary btn-lg">View All Jobs</a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer text-center">
+    <div class="container">
+        <p>&copy; 2024 JobConnect. All rights reserved.</p>
+    </div>
+</footer>
+
 {% endblock content %}
