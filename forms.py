@@ -1,4 +1,5 @@
 from wtforms import (
+    ValidationError,
     validators,
     StringField,
     DateField,
@@ -7,6 +8,13 @@ from wtforms import (
     TelField,
     Form,
 )
+from datetime import date
+
+
+def validate_date(form, field):
+    print(type(field.data))
+    if field.data < date.today():
+        raise ValidationError("Please enter a valid date")
 
 
 class JobApplicationForm(Form):
@@ -32,4 +40,6 @@ class JobApplicationForm(Form):
             ("AU", "Australia"),
         ],
     )
-    start_date = DateField("start_date", [validators.InputRequired()])
+    start_date = DateField(
+        "start_date", validators=[validators.InputRequired(), validate_date]
+    )
