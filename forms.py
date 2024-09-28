@@ -8,11 +8,12 @@ from wtforms import (
     TelField,
     Form,
 )
+from flask_wtf import FlaskForm
+from flask_wtf.file import File
 from datetime import date
 
 
 def validate_date(form, field):
-    print(type(field.data))
     if field.data < date.today():
         raise ValidationError("Please enter a valid date")
 

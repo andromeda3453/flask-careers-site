@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, Response, render_template, request
 from database import get_jobs
 from forms import JobApplicationForm
+import os
+from utils import upload_resume
 
 app = Flask(__name__)
 
@@ -13,9 +15,17 @@ def job_detail(job_id):
 
 @app.post("/job/<job_id>")
 def submit_application(job_id):
-    print(request.form)
     form = JobApplicationForm(request.form)
-    print(form.data)
+    if form.validate():
+        file = request.files["cv"]
+        file_path = os.path.join(os.getcwd(), file.filename)
+        file.save(file_path)
+        upload_resume(file_path)
+        if os.path.exists(file_path):
+            os.remove(file_path)
+        return Response("submission successful", 200)
+
+    return Response("submission unsuccessful", 400)
 
 
 @app.route("/")
